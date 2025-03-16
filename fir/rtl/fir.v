@@ -121,7 +121,7 @@ module fir
     
     assign tap_EN = (axis_rst_n)? 1 : 0;
     assign tap_WE = ((wvalid == 1) && (awaddr[7:0] != 0))? 4'b1111 : 4'b0000;
-    assign tap_A  = (awvalid == 1 && (awaddr[5] == 1 || awaddr[6] == 1) )? (awaddr[6:0]-6'h20) : tap_ar[5:0];
+    assign tap_A  = (awvalid == 1 && (awaddr[5] == 1 || awaddr[6] == 1))? (awaddr[6:0]-6'h20) : tap_ar[5:0];
     assign tap_Di = (awvalid == 1 && (awaddr[5] == 1 || awaddr[6] == 1))? wdata : 32'h00000000;
     assign rdata = (araddr[7:0] == 8'd0)? ap_ctrl : tap_Do;
         
