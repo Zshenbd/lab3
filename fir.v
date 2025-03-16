@@ -197,8 +197,8 @@ module fir
     reg [3:0] yn_count;
     reg [31:0] yn_total_count;
     
-    assign sm_tvalid = (yn_count == 4'd1)? 1 : 0;    // send output Y to tb
-    assign sm_tdata  = (sm_tvalid)? y_reg : 0;                               // data after calculation Y[t]    
+    assign sm_tvalid = (yn_count == 4'd1)? 1 : 0;    
+    assign sm_tdata  = (sm_tvalid)? y_reg : 0;             
     assign sm_tlast  = (sm_tvalid && yn_total_count == data_length - 1)? 1 : 0; 
     
     always @(posedge axis_clk or negedge axis_rst_n) begin
@@ -254,7 +254,7 @@ module fir
     wire [5:0] tap_ar;    // address which will send into tap_RAM
     reg  [5:0] fir_tap_ar;
     
-    assign tap_ar = (ap_ctrl[2])? (araddr[6:0]-6'h20) : fir_tap_ar; // if ap_idle = 0, use value of address generator
+    assign tap_ar = (ap_ctrl[2])? (araddr[6:0]-6'h20) : fir_tap_ar; 
 
     always @(posedge axis_clk or negedge axis_rst_n) begin
         if (!axis_rst_n || ap_ctrl[2])
