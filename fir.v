@@ -251,7 +251,7 @@ module fir
     
     
 //tap RAM Address Generator----------------------------------------------------------------------------- 
-    wire [5:0] tap_ar;    // address which will send into tap_RAM
+    wire [5:0] tap_ar;    
     reg  [5:0] fir_tap_ar;
     
     assign tap_ar = (ap_ctrl[2])? (araddr[6:0]-6'h20) : fir_tap_ar; 
