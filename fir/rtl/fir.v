@@ -62,7 +62,7 @@ module fir
             begin
                 if (awaddr == 12'd0 && wdata[0] == 1 && yn_total_count != data_length) begin
                     next_ap_state <= `AP_RUN;
-                    next_ap_ctrl <= 3'b101;
+                    next_ap_ctrl <= 3'b001;
                 end else begin
                     next_ap_state <= `AP_IDLE;
                     next_ap_ctrl <= 3'b100;
@@ -165,35 +165,8 @@ module fir
         end
     end
 
-    reg ss_state;
-    reg ss_next_state;
-    
-    always @* begin
-        case(ss_state)
-        1'b1: //x[n] is writing into the data_RAM 
-        begin
-            if (ss_tvalid && ss_tlast) ss_next_state = 0;
-            else ss_next_state = 1;
-        end
-        1'b0: //x[n] finish writing into the data_RAM
-        begin
-            if (ss_tvalid) ss_next_state = 1;
-            else ss_next_state = 0;
-        end
-        default: ss_next_state = (ss_tvalid)? 1 : 0;
-        endcase
-    end
-    
-    always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n)
-            ss_state <= 0;
-        else
-            ss_state <= ss_next_state;
-    end
-    
+       
 // AXI_stream_Y[n]-----------------------------------------------------------------------------          
-    reg sm_state;
-    reg sm_next_state;
     reg [3:0] yn_count;
     reg [31:0] yn_total_count;
     
@@ -225,31 +198,7 @@ module fir
             else yn_total_count <= yn_total_count;
         end
     end       
-    
-    always @* begin
-        case(sm_state)
-        1'b1: //y[n] is read out 
-        begin
-            if (sm_tlast) sm_next_state = 0;
-            else sm_next_state = 1;
-        end
-        1'b0: //y[n] finish calculating and read
-        begin
-            if (sm_tready) sm_next_state = 1;
-            else sm_next_state = 0;
-        end
-        default: sm_next_state = (sm_tvalid)? 1 : 0;
-        endcase
-    end
-    
-    always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n)
-            sm_state <= 0;
-        else
-            sm_state <= sm_next_state;
-    end
-    
-    
+        
 //tap RAM Address Generator----------------------------------------------------------------------------- 
     wire [5:0] tap_ar;    
     reg  [5:0] fir_tap_ar;
