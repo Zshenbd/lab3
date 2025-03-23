@@ -1,0 +1,2010 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Sun Mar 23 08:57:43 2025
+| Host         : ubuntu2004 running 64-bit Ubuntu 20.04.4 LTS
+| Command      : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2 -file /home/ubuntu/Desktop/lab3/log_files/static_timing_report.txt
+| Design       : fir
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (479)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (454)
+5. checking no_input_delay (126)
+6. checking no_output_delay (88)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (479)
+--------------------------
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[0] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[1] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[2] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[3] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[4] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[5] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[6] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 32 register/latch pins with no clock driven by root clock pin: awaddr[7] (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+ There are 191 register/latch pins with no clock driven by root clock pin: axis_clk (HIGH)
+
+FSM_sequential_ap_state_reg[0]/C
+ap_ctrl_reg[0]/C
+ap_ctrl_reg[1]/C
+ap_ctrl_reg[2]/C
+ap_ctrl_reg[2]_rep/C
+b_reg_reg[0]/C
+b_reg_reg[10]/C
+b_reg_reg[11]/C
+b_reg_reg[12]/C
+b_reg_reg[13]/C
+b_reg_reg[14]/C
+b_reg_reg[15]/C
+b_reg_reg[16]/C
+b_reg_reg[17]/C
+b_reg_reg[18]/C
+b_reg_reg[19]/C
+b_reg_reg[1]/C
+b_reg_reg[20]/C
+b_reg_reg[21]/C
+b_reg_reg[22]/C
+b_reg_reg[23]/C
+b_reg_reg[24]/C
+b_reg_reg[25]/C
+b_reg_reg[26]/C
+b_reg_reg[27]/C
+b_reg_reg[28]/C
+b_reg_reg[29]/C
+b_reg_reg[2]/C
+b_reg_reg[30]/C
+b_reg_reg[31]/C
+b_reg_reg[3]/C
+b_reg_reg[4]/C
+b_reg_reg[5]/C
+b_reg_reg[6]/C
+b_reg_reg[7]/C
+b_reg_reg[8]/C
+b_reg_reg[9]/C
+fir_arready_reg/C
+fir_awready_reg/C
+fir_data_ar_reg[2]/C
+fir_data_ar_reg[3]/C
+fir_data_ar_reg[4]/C
+fir_data_ar_reg[5]/C
+fir_data_aw_reg[2]/C
+fir_data_aw_reg[3]/C
+fir_data_aw_reg[4]/C
+fir_data_aw_reg[5]/C
+fir_tap_ar_reg[2]/C
+fir_tap_ar_reg[3]/C
+fir_tap_ar_reg[4]/C
+fir_tap_ar_reg[5]/C
+i_data_a_reg[2]/C
+i_data_a_reg[3]/C
+i_data_a_reg[4]/C
+i_data_a_reg[5]/C
+m_reg_reg[0]/C
+m_reg_reg[10]/C
+m_reg_reg[11]/C
+m_reg_reg[12]/C
+m_reg_reg[13]/C
+m_reg_reg[14]/C
+m_reg_reg[15]/C
+m_reg_reg[16]/C
+m_reg_reg[17]/C
+m_reg_reg[18]/C
+m_reg_reg[19]/C
+m_reg_reg[1]/C
+m_reg_reg[20]/C
+m_reg_reg[21]/C
+m_reg_reg[22]/C
+m_reg_reg[23]/C
+m_reg_reg[24]/C
+m_reg_reg[25]/C
+m_reg_reg[26]/C
+m_reg_reg[27]/C
+m_reg_reg[28]/C
+m_reg_reg[29]/C
+m_reg_reg[2]/C
+m_reg_reg[30]/C
+m_reg_reg[31]/C
+m_reg_reg[3]/C
+m_reg_reg[4]/C
+m_reg_reg[5]/C
+m_reg_reg[6]/C
+m_reg_reg[7]/C
+m_reg_reg[8]/C
+m_reg_reg[9]/C
+x_reg_reg[0]/C
+x_reg_reg[10]/C
+x_reg_reg[11]/C
+x_reg_reg[12]/C
+x_reg_reg[13]/C
+x_reg_reg[14]/C
+x_reg_reg[15]/C
+x_reg_reg[16]/C
+x_reg_reg[17]/C
+x_reg_reg[18]/C
+x_reg_reg[19]/C
+x_reg_reg[1]/C
+x_reg_reg[20]/C
+x_reg_reg[21]/C
+x_reg_reg[22]/C
+x_reg_reg[23]/C
+x_reg_reg[24]/C
+x_reg_reg[25]/C
+x_reg_reg[26]/C
+x_reg_reg[27]/C
+x_reg_reg[28]/C
+x_reg_reg[29]/C
+x_reg_reg[2]/C
+x_reg_reg[30]/C
+x_reg_reg[31]/C
+x_reg_reg[3]/C
+x_reg_reg[4]/C
+x_reg_reg[5]/C
+x_reg_reg[6]/C
+x_reg_reg[7]/C
+x_reg_reg[8]/C
+x_reg_reg[9]/C
+xn_count_reg[0]/C
+xn_count_reg[1]/C
+xn_count_reg[2]/C
+xn_count_reg[3]/C
+y_reg_reg[0]/C
+y_reg_reg[10]/C
+y_reg_reg[11]/C
+y_reg_reg[12]/C
+y_reg_reg[13]/C
+y_reg_reg[14]/C
+y_reg_reg[15]/C
+y_reg_reg[16]/C
+y_reg_reg[17]/C
+y_reg_reg[18]/C
+y_reg_reg[19]/C
+y_reg_reg[1]/C
+y_reg_reg[20]/C
+y_reg_reg[21]/C
+y_reg_reg[22]/C
+y_reg_reg[23]/C
+y_reg_reg[24]/C
+y_reg_reg[25]/C
+y_reg_reg[26]/C
+y_reg_reg[27]/C
+y_reg_reg[28]/C
+y_reg_reg[29]/C
+y_reg_reg[2]/C
+y_reg_reg[30]/C
+y_reg_reg[31]/C
+y_reg_reg[3]/C
+y_reg_reg[4]/C
+y_reg_reg[5]/C
+y_reg_reg[6]/C
+y_reg_reg[7]/C
+y_reg_reg[8]/C
+y_reg_reg[9]/C
+yn_count_reg[0]/C
+yn_count_reg[1]/C
+yn_count_reg[2]/C
+yn_count_reg[3]/C
+yn_total_count_reg[0]/C
+yn_total_count_reg[10]/C
+yn_total_count_reg[11]/C
+yn_total_count_reg[12]/C
+yn_total_count_reg[13]/C
+yn_total_count_reg[14]/C
+yn_total_count_reg[15]/C
+yn_total_count_reg[16]/C
+yn_total_count_reg[17]/C
+yn_total_count_reg[18]/C
+yn_total_count_reg[19]/C
+yn_total_count_reg[1]/C
+yn_total_count_reg[20]/C
+yn_total_count_reg[21]/C
+yn_total_count_reg[22]/C
+yn_total_count_reg[23]/C
+yn_total_count_reg[24]/C
+yn_total_count_reg[25]/C
+yn_total_count_reg[26]/C
+yn_total_count_reg[27]/C
+yn_total_count_reg[28]/C
+yn_total_count_reg[29]/C
+yn_total_count_reg[2]/C
+yn_total_count_reg[30]/C
+yn_total_count_reg[31]/C
+yn_total_count_reg[3]/C
+yn_total_count_reg[4]/C
+yn_total_count_reg[5]/C
+yn_total_count_reg[6]/C
+yn_total_count_reg[7]/C
+yn_total_count_reg[8]/C
+yn_total_count_reg[9]/C
+
+ There are 32 register/latch pins with no clock driven by root clock pin: fir_awready_reg/Q (HIGH)
+
+data_length_reg[0]/G
+data_length_reg[10]/G
+data_length_reg[11]/G
+data_length_reg[12]/G
+data_length_reg[13]/G
+data_length_reg[14]/G
+data_length_reg[15]/G
+data_length_reg[16]/G
+data_length_reg[17]/G
+data_length_reg[18]/G
+data_length_reg[19]/G
+data_length_reg[1]/G
+data_length_reg[20]/G
+data_length_reg[21]/G
+data_length_reg[22]/G
+data_length_reg[23]/G
+data_length_reg[24]/G
+data_length_reg[25]/G
+data_length_reg[26]/G
+data_length_reg[27]/G
+data_length_reg[28]/G
+data_length_reg[29]/G
+data_length_reg[2]/G
+data_length_reg[30]/G
+data_length_reg[31]/G
+data_length_reg[3]/G
+data_length_reg[4]/G
+data_length_reg[5]/G
+data_length_reg[6]/G
+data_length_reg[7]/G
+data_length_reg[8]/G
+data_length_reg[9]/G
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (454)
+--------------------------------------------------
+ There are 454 pins that are not constrained for maximum delay. (HIGH)
+
+FSM_sequential_ap_state_reg[0]/CLR
+FSM_sequential_ap_state_reg[0]/D
+ap_ctrl_reg[0]/CLR
+ap_ctrl_reg[0]/D
+ap_ctrl_reg[1]/CLR
+ap_ctrl_reg[1]/D
+ap_ctrl_reg[2]/D
+ap_ctrl_reg[2]/PRE
+ap_ctrl_reg[2]_rep/D
+ap_ctrl_reg[2]_rep/PRE
+b_reg_reg[0]/CLR
+b_reg_reg[0]/D
+b_reg_reg[10]/CLR
+b_reg_reg[10]/D
+b_reg_reg[11]/CLR
+b_reg_reg[11]/D
+b_reg_reg[12]/CLR
+b_reg_reg[12]/D
+b_reg_reg[13]/CLR
+b_reg_reg[13]/D
+b_reg_reg[14]/CLR
+b_reg_reg[14]/D
+b_reg_reg[15]/CLR
+b_reg_reg[15]/D
+b_reg_reg[16]/CLR
+b_reg_reg[16]/D
+b_reg_reg[17]/CLR
+b_reg_reg[17]/D
+b_reg_reg[18]/CLR
+b_reg_reg[18]/D
+b_reg_reg[19]/CLR
+b_reg_reg[19]/D
+b_reg_reg[1]/CLR
+b_reg_reg[1]/D
+b_reg_reg[20]/CLR
+b_reg_reg[20]/D
+b_reg_reg[21]/CLR
+b_reg_reg[21]/D
+b_reg_reg[22]/CLR
+b_reg_reg[22]/D
+b_reg_reg[23]/CLR
+b_reg_reg[23]/D
+b_reg_reg[24]/CLR
+b_reg_reg[24]/D
+b_reg_reg[25]/CLR
+b_reg_reg[25]/D
+b_reg_reg[26]/CLR
+b_reg_reg[26]/D
+b_reg_reg[27]/CLR
+b_reg_reg[27]/D
+b_reg_reg[28]/CLR
+b_reg_reg[28]/D
+b_reg_reg[29]/CLR
+b_reg_reg[29]/D
+b_reg_reg[2]/CLR
+b_reg_reg[2]/D
+b_reg_reg[30]/CLR
+b_reg_reg[30]/D
+b_reg_reg[31]/CLR
+b_reg_reg[31]/D
+b_reg_reg[3]/CLR
+b_reg_reg[3]/D
+b_reg_reg[4]/CLR
+b_reg_reg[4]/D
+b_reg_reg[5]/CLR
+b_reg_reg[5]/D
+b_reg_reg[6]/CLR
+b_reg_reg[6]/D
+b_reg_reg[7]/CLR
+b_reg_reg[7]/D
+b_reg_reg[8]/CLR
+b_reg_reg[8]/D
+b_reg_reg[9]/CLR
+b_reg_reg[9]/D
+data_length_reg[0]/D
+data_length_reg[10]/D
+data_length_reg[11]/D
+data_length_reg[12]/D
+data_length_reg[13]/D
+data_length_reg[14]/D
+data_length_reg[15]/D
+data_length_reg[16]/D
+data_length_reg[17]/D
+data_length_reg[18]/D
+data_length_reg[19]/D
+data_length_reg[1]/D
+data_length_reg[20]/D
+data_length_reg[21]/D
+data_length_reg[22]/D
+data_length_reg[23]/D
+data_length_reg[24]/D
+data_length_reg[25]/D
+data_length_reg[26]/D
+data_length_reg[27]/D
+data_length_reg[28]/D
+data_length_reg[29]/D
+data_length_reg[2]/D
+data_length_reg[30]/D
+data_length_reg[31]/D
+data_length_reg[3]/D
+data_length_reg[4]/D
+data_length_reg[5]/D
+data_length_reg[6]/D
+data_length_reg[7]/D
+data_length_reg[8]/D
+data_length_reg[9]/D
+fir_arready_reg/CLR
+fir_arready_reg/D
+fir_awready_reg/CLR
+fir_awready_reg/D
+fir_data_ar_reg[2]/CE
+fir_data_ar_reg[2]/D
+fir_data_ar_reg[2]/PRE
+fir_data_ar_reg[3]/CE
+fir_data_ar_reg[3]/CLR
+fir_data_ar_reg[3]/D
+fir_data_ar_reg[4]/CE
+fir_data_ar_reg[4]/CLR
+fir_data_ar_reg[4]/D
+fir_data_ar_reg[5]/CE
+fir_data_ar_reg[5]/CLR
+fir_data_ar_reg[5]/D
+fir_data_aw_reg[2]/CE
+fir_data_aw_reg[2]/D
+fir_data_aw_reg[2]/PRE
+fir_data_aw_reg[3]/CE
+fir_data_aw_reg[3]/CLR
+fir_data_aw_reg[3]/D
+fir_data_aw_reg[4]/CE
+fir_data_aw_reg[4]/CLR
+fir_data_aw_reg[4]/D
+fir_data_aw_reg[5]/CE
+fir_data_aw_reg[5]/CLR
+fir_data_aw_reg[5]/D
+fir_tap_ar_reg[2]/CLR
+fir_tap_ar_reg[2]/D
+fir_tap_ar_reg[3]/CLR
+fir_tap_ar_reg[3]/D
+fir_tap_ar_reg[4]/CLR
+fir_tap_ar_reg[4]/D
+fir_tap_ar_reg[5]/CLR
+fir_tap_ar_reg[5]/D
+i_data_a_reg[2]/D
+i_data_a_reg[2]/PRE
+i_data_a_reg[3]/D
+i_data_a_reg[3]/PRE
+i_data_a_reg[4]/D
+i_data_a_reg[4]/PRE
+i_data_a_reg[5]/D
+i_data_a_reg[5]/PRE
+m_reg_reg[0]/CLR
+m_reg_reg[0]/D
+m_reg_reg[10]/CLR
+m_reg_reg[10]/D
+m_reg_reg[11]/CLR
+m_reg_reg[11]/D
+m_reg_reg[12]/CLR
+m_reg_reg[12]/D
+m_reg_reg[13]/CLR
+m_reg_reg[13]/D
+m_reg_reg[14]/CLR
+m_reg_reg[14]/D
+m_reg_reg[15]/CLR
+m_reg_reg[15]/D
+m_reg_reg[16]/CLR
+m_reg_reg[16]/D
+m_reg_reg[17]/CLR
+m_reg_reg[17]/D
+m_reg_reg[18]/CLR
+m_reg_reg[18]/D
+m_reg_reg[19]/CLR
+m_reg_reg[19]/D
+m_reg_reg[1]/CLR
+m_reg_reg[1]/D
+m_reg_reg[20]/CLR
+m_reg_reg[20]/D
+m_reg_reg[21]/CLR
+m_reg_reg[21]/D
+m_reg_reg[22]/CLR
+m_reg_reg[22]/D
+m_reg_reg[23]/CLR
+m_reg_reg[23]/D
+m_reg_reg[24]/CLR
+m_reg_reg[24]/D
+m_reg_reg[25]/CLR
+m_reg_reg[25]/D
+m_reg_reg[26]/CLR
+m_reg_reg[26]/D
+m_reg_reg[27]/CLR
+m_reg_reg[27]/D
+m_reg_reg[28]/CLR
+m_reg_reg[28]/D
+m_reg_reg[29]/CLR
+m_reg_reg[29]/D
+m_reg_reg[2]/CLR
+m_reg_reg[2]/D
+m_reg_reg[30]/CLR
+m_reg_reg[30]/D
+m_reg_reg[31]/CLR
+m_reg_reg[31]/D
+m_reg_reg[3]/CLR
+m_reg_reg[3]/D
+m_reg_reg[4]/CLR
+m_reg_reg[4]/D
+m_reg_reg[5]/CLR
+m_reg_reg[5]/D
+m_reg_reg[6]/CLR
+m_reg_reg[6]/D
+m_reg_reg[7]/CLR
+m_reg_reg[7]/D
+m_reg_reg[8]/CLR
+m_reg_reg[8]/D
+m_reg_reg[9]/CLR
+m_reg_reg[9]/D
+x_reg_reg[0]/CLR
+x_reg_reg[0]/D
+x_reg_reg[10]/CLR
+x_reg_reg[10]/D
+x_reg_reg[11]/CLR
+x_reg_reg[11]/D
+x_reg_reg[12]/CLR
+x_reg_reg[12]/D
+x_reg_reg[13]/CLR
+x_reg_reg[13]/D
+x_reg_reg[14]/CLR
+x_reg_reg[14]/D
+x_reg_reg[15]/CLR
+x_reg_reg[15]/D
+x_reg_reg[16]/CLR
+x_reg_reg[16]/D
+x_reg_reg[17]/CLR
+x_reg_reg[17]/D
+x_reg_reg[18]/CLR
+x_reg_reg[18]/D
+x_reg_reg[19]/CLR
+x_reg_reg[19]/D
+x_reg_reg[1]/CLR
+x_reg_reg[1]/D
+x_reg_reg[20]/CLR
+x_reg_reg[20]/D
+x_reg_reg[21]/CLR
+x_reg_reg[21]/D
+x_reg_reg[22]/CLR
+x_reg_reg[22]/D
+x_reg_reg[23]/CLR
+x_reg_reg[23]/D
+x_reg_reg[24]/CLR
+x_reg_reg[24]/D
+x_reg_reg[25]/CLR
+x_reg_reg[25]/D
+x_reg_reg[26]/CLR
+x_reg_reg[26]/D
+x_reg_reg[27]/CLR
+x_reg_reg[27]/D
+x_reg_reg[28]/CLR
+x_reg_reg[28]/D
+x_reg_reg[29]/CLR
+x_reg_reg[29]/D
+x_reg_reg[2]/CLR
+x_reg_reg[2]/D
+x_reg_reg[30]/CLR
+x_reg_reg[30]/D
+x_reg_reg[31]/CLR
+x_reg_reg[31]/D
+x_reg_reg[3]/CLR
+x_reg_reg[3]/D
+x_reg_reg[4]/CLR
+x_reg_reg[4]/D
+x_reg_reg[5]/CLR
+x_reg_reg[5]/D
+x_reg_reg[6]/CLR
+x_reg_reg[6]/D
+x_reg_reg[7]/CLR
+x_reg_reg[7]/D
+x_reg_reg[8]/CLR
+x_reg_reg[8]/D
+x_reg_reg[9]/CLR
+x_reg_reg[9]/D
+xn_count_reg[0]/CLR
+xn_count_reg[0]/D
+xn_count_reg[1]/CLR
+xn_count_reg[1]/D
+xn_count_reg[2]/CLR
+xn_count_reg[2]/D
+xn_count_reg[3]/CLR
+xn_count_reg[3]/D
+y_reg_reg[0]/CLR
+y_reg_reg[0]/D
+y_reg_reg[10]/CLR
+y_reg_reg[10]/D
+y_reg_reg[11]/CLR
+y_reg_reg[11]/D
+y_reg_reg[12]/CLR
+y_reg_reg[12]/D
+y_reg_reg[13]/CLR
+y_reg_reg[13]/D
+y_reg_reg[14]/CLR
+y_reg_reg[14]/D
+y_reg_reg[15]/CLR
+y_reg_reg[15]/D
+y_reg_reg[16]/CLR
+y_reg_reg[16]/D
+y_reg_reg[17]/CLR
+y_reg_reg[17]/D
+y_reg_reg[18]/CLR
+y_reg_reg[18]/D
+y_reg_reg[19]/CLR
+y_reg_reg[19]/D
+y_reg_reg[1]/CLR
+y_reg_reg[1]/D
+y_reg_reg[20]/CLR
+y_reg_reg[20]/D
+y_reg_reg[21]/CLR
+y_reg_reg[21]/D
+y_reg_reg[22]/CLR
+y_reg_reg[22]/D
+y_reg_reg[23]/CLR
+y_reg_reg[23]/D
+y_reg_reg[24]/CLR
+y_reg_reg[24]/D
+y_reg_reg[25]/CLR
+y_reg_reg[25]/D
+y_reg_reg[26]/CLR
+y_reg_reg[26]/D
+y_reg_reg[27]/CLR
+y_reg_reg[27]/D
+y_reg_reg[28]/CLR
+y_reg_reg[28]/D
+y_reg_reg[29]/CLR
+y_reg_reg[29]/D
+y_reg_reg[2]/CLR
+y_reg_reg[2]/D
+y_reg_reg[30]/CLR
+y_reg_reg[30]/D
+y_reg_reg[31]/CLR
+y_reg_reg[31]/D
+y_reg_reg[3]/CLR
+y_reg_reg[3]/D
+y_reg_reg[4]/CLR
+y_reg_reg[4]/D
+y_reg_reg[5]/CLR
+y_reg_reg[5]/D
+y_reg_reg[6]/CLR
+y_reg_reg[6]/D
+y_reg_reg[7]/CLR
+y_reg_reg[7]/D
+y_reg_reg[8]/CLR
+y_reg_reg[8]/D
+y_reg_reg[9]/CLR
+y_reg_reg[9]/D
+yn_count_reg[0]/CLR
+yn_count_reg[0]/D
+yn_count_reg[1]/CLR
+yn_count_reg[1]/D
+yn_count_reg[2]/CLR
+yn_count_reg[2]/D
+yn_count_reg[3]/CLR
+yn_count_reg[3]/D
+yn_total_count_reg[0]/CE
+yn_total_count_reg[0]/CLR
+yn_total_count_reg[0]/D
+yn_total_count_reg[10]/CE
+yn_total_count_reg[10]/CLR
+yn_total_count_reg[10]/D
+yn_total_count_reg[11]/CE
+yn_total_count_reg[11]/CLR
+yn_total_count_reg[11]/D
+yn_total_count_reg[12]/CE
+yn_total_count_reg[12]/CLR
+yn_total_count_reg[12]/D
+yn_total_count_reg[13]/CE
+yn_total_count_reg[13]/CLR
+yn_total_count_reg[13]/D
+yn_total_count_reg[14]/CE
+yn_total_count_reg[14]/CLR
+yn_total_count_reg[14]/D
+yn_total_count_reg[15]/CE
+yn_total_count_reg[15]/CLR
+yn_total_count_reg[15]/D
+yn_total_count_reg[16]/CE
+yn_total_count_reg[16]/CLR
+yn_total_count_reg[16]/D
+yn_total_count_reg[17]/CE
+yn_total_count_reg[17]/CLR
+yn_total_count_reg[17]/D
+yn_total_count_reg[18]/CE
+yn_total_count_reg[18]/CLR
+yn_total_count_reg[18]/D
+yn_total_count_reg[19]/CE
+yn_total_count_reg[19]/CLR
+yn_total_count_reg[19]/D
+yn_total_count_reg[1]/CE
+yn_total_count_reg[1]/CLR
+yn_total_count_reg[1]/D
+yn_total_count_reg[20]/CE
+yn_total_count_reg[20]/CLR
+yn_total_count_reg[20]/D
+yn_total_count_reg[21]/CE
+yn_total_count_reg[21]/CLR
+yn_total_count_reg[21]/D
+yn_total_count_reg[22]/CE
+yn_total_count_reg[22]/CLR
+yn_total_count_reg[22]/D
+yn_total_count_reg[23]/CE
+yn_total_count_reg[23]/CLR
+yn_total_count_reg[23]/D
+yn_total_count_reg[24]/CE
+yn_total_count_reg[24]/CLR
+yn_total_count_reg[24]/D
+yn_total_count_reg[25]/CE
+yn_total_count_reg[25]/CLR
+yn_total_count_reg[25]/D
+yn_total_count_reg[26]/CE
+yn_total_count_reg[26]/CLR
+yn_total_count_reg[26]/D
+yn_total_count_reg[27]/CE
+yn_total_count_reg[27]/CLR
+yn_total_count_reg[27]/D
+yn_total_count_reg[28]/CE
+yn_total_count_reg[28]/CLR
+yn_total_count_reg[28]/D
+yn_total_count_reg[29]/CE
+yn_total_count_reg[29]/CLR
+yn_total_count_reg[29]/D
+yn_total_count_reg[2]/CE
+yn_total_count_reg[2]/CLR
+yn_total_count_reg[2]/D
+yn_total_count_reg[30]/CE
+yn_total_count_reg[30]/CLR
+yn_total_count_reg[30]/D
+yn_total_count_reg[31]/CE
+yn_total_count_reg[31]/CLR
+yn_total_count_reg[31]/D
+yn_total_count_reg[3]/CE
+yn_total_count_reg[3]/CLR
+yn_total_count_reg[3]/D
+yn_total_count_reg[4]/CE
+yn_total_count_reg[4]/CLR
+yn_total_count_reg[4]/D
+yn_total_count_reg[5]/CE
+yn_total_count_reg[5]/CLR
+yn_total_count_reg[5]/D
+yn_total_count_reg[6]/CE
+yn_total_count_reg[6]/CLR
+yn_total_count_reg[6]/D
+yn_total_count_reg[7]/CE
+yn_total_count_reg[7]/CLR
+yn_total_count_reg[7]/D
+yn_total_count_reg[8]/CE
+yn_total_count_reg[8]/CLR
+yn_total_count_reg[8]/D
+yn_total_count_reg[9]/CE
+yn_total_count_reg[9]/CLR
+yn_total_count_reg[9]/D
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (126)
+--------------------------------
+ There are 126 input ports with no input delay specified. (HIGH)
+
+araddr[0]
+araddr[10]
+araddr[11]
+araddr[1]
+araddr[2]
+araddr[3]
+araddr[4]
+araddr[5]
+araddr[6]
+araddr[7]
+araddr[8]
+araddr[9]
+arvalid
+awaddr[0]
+awaddr[10]
+awaddr[11]
+awaddr[1]
+awaddr[2]
+awaddr[3]
+awaddr[4]
+awaddr[5]
+awaddr[6]
+awaddr[7]
+awaddr[8]
+awaddr[9]
+awvalid
+axis_rst_n
+data_Do[0]
+data_Do[10]
+data_Do[11]
+data_Do[12]
+data_Do[13]
+data_Do[14]
+data_Do[15]
+data_Do[16]
+data_Do[17]
+data_Do[18]
+data_Do[19]
+data_Do[1]
+data_Do[20]
+data_Do[21]
+data_Do[22]
+data_Do[23]
+data_Do[24]
+data_Do[25]
+data_Do[26]
+data_Do[27]
+data_Do[28]
+data_Do[29]
+data_Do[2]
+data_Do[30]
+data_Do[31]
+data_Do[3]
+data_Do[4]
+data_Do[5]
+data_Do[6]
+data_Do[7]
+data_Do[8]
+data_Do[9]
+rready
+ss_tvalid
+tap_Do[0]
+tap_Do[10]
+tap_Do[11]
+tap_Do[12]
+tap_Do[13]
+tap_Do[14]
+tap_Do[15]
+tap_Do[16]
+tap_Do[17]
+tap_Do[18]
+tap_Do[19]
+tap_Do[1]
+tap_Do[20]
+tap_Do[21]
+tap_Do[22]
+tap_Do[23]
+tap_Do[24]
+tap_Do[25]
+tap_Do[26]
+tap_Do[27]
+tap_Do[28]
+tap_Do[29]
+tap_Do[2]
+tap_Do[30]
+tap_Do[31]
+tap_Do[3]
+tap_Do[4]
+tap_Do[5]
+tap_Do[6]
+tap_Do[7]
+tap_Do[8]
+tap_Do[9]
+wdata[0]
+wdata[10]
+wdata[11]
+wdata[12]
+wdata[13]
+wdata[14]
+wdata[15]
+wdata[16]
+wdata[17]
+wdata[18]
+wdata[19]
+wdata[1]
+wdata[20]
+wdata[21]
+wdata[22]
+wdata[23]
+wdata[24]
+wdata[25]
+wdata[26]
+wdata[27]
+wdata[28]
+wdata[29]
+wdata[2]
+wdata[30]
+wdata[31]
+wdata[3]
+wdata[4]
+wdata[5]
+wdata[6]
+wdata[7]
+wdata[8]
+wdata[9]
+wvalid
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (88)
+--------------------------------
+ There are 88 ports with no output delay specified. (HIGH)
+
+arready
+awready
+data_A[2]
+data_A[3]
+data_A[4]
+data_A[5]
+data_Di[0]
+data_Di[10]
+data_Di[11]
+data_Di[12]
+data_Di[13]
+data_Di[14]
+data_Di[15]
+data_Di[16]
+data_Di[17]
+data_Di[18]
+data_Di[19]
+data_Di[1]
+data_Di[20]
+data_Di[21]
+data_Di[22]
+data_Di[23]
+data_Di[24]
+data_Di[25]
+data_Di[26]
+data_Di[27]
+data_Di[28]
+data_Di[29]
+data_Di[2]
+data_Di[30]
+data_Di[31]
+data_Di[3]
+data_Di[4]
+data_Di[5]
+data_Di[6]
+data_Di[7]
+data_Di[8]
+data_Di[9]
+data_WE[0]
+data_WE[1]
+data_WE[2]
+data_WE[3]
+rdata[0]
+rdata[1]
+rdata[2]
+rvalid
+sm_tdata[0]
+sm_tdata[10]
+sm_tdata[11]
+sm_tdata[12]
+sm_tdata[13]
+sm_tdata[14]
+sm_tdata[15]
+sm_tdata[16]
+sm_tdata[17]
+sm_tdata[18]
+sm_tdata[19]
+sm_tdata[1]
+sm_tdata[20]
+sm_tdata[21]
+sm_tdata[22]
+sm_tdata[23]
+sm_tdata[24]
+sm_tdata[25]
+sm_tdata[26]
+sm_tdata[27]
+sm_tdata[28]
+sm_tdata[29]
+sm_tdata[2]
+sm_tdata[30]
+sm_tdata[31]
+sm_tdata[3]
+sm_tdata[4]
+sm_tdata[5]
+sm_tdata[6]
+sm_tdata[7]
+sm_tdata[8]
+sm_tdata[9]
+sm_tlast
+sm_tvalid
+ss_tready
+tap_A[0]
+tap_A[1]
+tap_A[2]
+tap_A[3]
+tap_A[4]
+tap_A[5]
+wready
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  610          inf        0.000                      0                  610           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           610 Endpoints
+Min Delay           610 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[29]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.098ns  (logic 7.435ns (81.717%)  route 1.663ns (18.283%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.761 r  m_reg_reg[27]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.761    m_reg_reg[27]_i_1_n_1
+                                                                      r  m_reg_reg[31]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     9.098 r  m_reg_reg[31]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     9.098    m_reg_reg[31]_i_1_n_7
+                         FDCE                                         r  m_reg_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[31]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.092ns  (logic 7.429ns (81.705%)  route 1.663ns (18.295%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.761 r  m_reg_reg[27]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.761    m_reg_reg[27]_i_1_n_1
+                                                                      r  m_reg_reg[31]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     9.092 r  m_reg_reg[31]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     9.092    m_reg_reg[31]_i_1_n_5
+                         FDCE                                         r  m_reg_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[30]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.017ns  (logic 7.354ns (81.553%)  route 1.663ns (18.447%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.761 r  m_reg_reg[27]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.761    m_reg_reg[27]_i_1_n_1
+                                                                      r  m_reg_reg[31]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.256     9.017 r  m_reg_reg[31]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     9.017    m_reg_reg[31]_i_1_n_6
+                         FDCE                                         r  m_reg_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[28]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.993ns  (logic 7.330ns (81.504%)  route 1.663ns (18.496%))
+  Logic Levels:           8  (CARRY4=4 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.761 r  m_reg_reg[27]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.761    m_reg_reg[27]_i_1_n_1
+                                                                      r  m_reg_reg[31]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.232     8.993 r  m_reg_reg[31]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     8.993    m_reg_reg[31]_i_1_n_8
+                         FDCE                                         r  m_reg_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[25]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.981ns  (logic 7.318ns (81.479%)  route 1.663ns (18.521%))
+  Logic Levels:           7  (CARRY4=3 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     8.981 r  m_reg_reg[27]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     8.981    m_reg_reg[27]_i_1_n_7
+                         FDCE                                         r  m_reg_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[27]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.975ns  (logic 7.312ns (81.467%)  route 1.663ns (18.533%))
+  Logic Levels:           7  (CARRY4=3 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     8.975 r  m_reg_reg[27]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     8.975    m_reg_reg[27]_i_1_n_5
+                         FDCE                                         r  m_reg_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[26]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.900ns  (logic 7.237ns (81.311%)  route 1.663ns (18.689%))
+  Logic Levels:           7  (CARRY4=3 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.256     8.900 r  m_reg_reg[27]_i_1/O[2]
+                         net (fo=1, unplaced)         0.000     8.900    m_reg_reg[27]_i_1_n_6
+                         FDCE                                         r  m_reg_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[24]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.876ns  (logic 7.213ns (81.260%)  route 1.663ns (18.740%))
+  Logic Levels:           7  (CARRY4=3 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.644 r  m_reg_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.644    m_reg_reg[23]_i_1_n_1
+                                                                      r  m_reg_reg[27]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.232     8.876 r  m_reg_reg[27]_i_1/O[0]
+                         net (fo=1, unplaced)         0.000     8.876    m_reg_reg[27]_i_1_n_8
+                         FDCE                                         r  m_reg_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[21]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.864ns  (logic 7.201ns (81.235%)  route 1.663ns (18.765%))
+  Logic Levels:           6  (CARRY4=2 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.337     8.864 r  m_reg_reg[23]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     8.864    m_reg_reg[23]_i_1_n_7
+                         FDCE                                         r  m_reg_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 b_reg_reg[16]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            m_reg_reg[23]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        8.858ns  (logic 7.195ns (81.222%)  route 1.663ns (18.778%))
+  Logic Levels:           6  (CARRY4=2 DSP48E1=2 FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  b_reg_reg[16]/C
+                         FDCE (Prop_fdce_C_Q)         0.478     0.478 r  b_reg_reg[16]/Q
+                         net (fo=1, unplaced)         0.800     1.278    b_reg[16]
+                                                                      r  m/A[16]
+                         DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.211     5.489 r  m/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.544    m_n_107
+                                                                      r  m__0/PCIN[47]
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.062 r  m__0/P[0]
+                         net (fo=1, unplaced)         0.800     7.861    m__0_n_106
+                                                                      r  m_reg[19]_i_7/I2
+                         LUT3 (Prop_lut3_I2_O)        0.124     7.985 r  m_reg[19]_i_7/O
+                         net (fo=1, unplaced)         0.000     7.985    m_reg[19]_i_7_n_1
+                                                                      r  m_reg_reg[19]_i_1/S[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     8.518 r  m_reg_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.009     8.527    m_reg_reg[19]_i_1_n_1
+                                                                      r  m_reg_reg[23]_i_1/CI
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.331     8.858 r  m_reg_reg[23]_i_1/O[3]
+                         net (fo=1, unplaced)         0.000     8.858    m_reg_reg[23]_i_1_n_5
+                         FDCE                                         r  m_reg_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 fir_data_ar_reg[3]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            fir_data_ar_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.388ns  (logic 0.245ns (63.161%)  route 0.143ns (36.839%))
+  Logic Levels:           2  (FDCE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  fir_data_ar_reg[3]/C
+                         FDCE (Prop_fdce_C_Q)         0.147     0.147 r  fir_data_ar_reg[3]/Q
+                         net (fo=5, unplaced)         0.143     0.290    fir_data_ar__0[3]
+                                                                      r  fir_data_ar[4]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.098     0.388 r  fir_data_ar[4]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.388    fir_data_ar[4]_i_1_n_1
+                         FDCE                                         r  fir_data_ar_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 fir_tap_ar_reg[2]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            fir_tap_ar_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.388ns  (logic 0.245ns (63.161%)  route 0.143ns (36.839%))
+  Logic Levels:           2  (FDCE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  fir_tap_ar_reg[2]/C
+                         FDCE (Prop_fdce_C_Q)         0.147     0.147 f  fir_tap_ar_reg[2]/Q
+                         net (fo=5, unplaced)         0.143     0.290    fir_tap_ar__0[2]
+                                                                      f  fir_tap_ar[2]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.098     0.388 r  fir_tap_ar[2]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.388    fir_tap_ar[2]_i_1_n_1
+                         FDCE                                         r  fir_tap_ar_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 i_data_a_reg[2]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            i_data_a_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.390ns  (logic 0.245ns (62.888%)  route 0.145ns (37.112%))
+  Logic Levels:           2  (FDPE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  i_data_a_reg[2]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 f  i_data_a_reg[2]/Q
+                         net (fo=6, unplaced)         0.145     0.292    i_data_a_reg_n_1_[2]
+                                                                      f  i_data_a[2]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.098     0.390 r  i_data_a[2]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.390    i_data_a[2]_i_1_n_1
+                         FDPE                                         r  i_data_a_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 i_data_a_reg[3]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            i_data_a_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.390ns  (logic 0.245ns (62.888%)  route 0.145ns (37.112%))
+  Logic Levels:           2  (FDPE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  i_data_a_reg[3]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 r  i_data_a_reg[3]/Q
+                         net (fo=6, unplaced)         0.145     0.292    i_data_a_reg_n_1_[3]
+                                                                      r  i_data_a[4]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.098     0.390 r  i_data_a[4]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.390    i_data_a[4]
+                         FDPE                                         r  i_data_a_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 xn_count_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            xn_count_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.391ns  (logic 0.245ns (62.685%)  route 0.146ns (37.315%))
+  Logic Levels:           2  (FDCE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDCE                         0.000     0.000 r  xn_count_reg[0]/C
+                         FDCE (Prop_fdce_C_Q)         0.147     0.147 f  xn_count_reg[0]/Q
+                         net (fo=7, unplaced)         0.146     0.293    xn_count[0]
+                                                                      f  xn_count[0]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.098     0.391 r  xn_count[0]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.391    xn_count[0]_i_1_n_1
+                         FDCE                                         r  xn_count_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 i_data_a_reg[5]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            i_data_a_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.393ns  (logic 0.248ns (63.172%)  route 0.145ns (36.828%))
+  Logic Levels:           2  (FDPE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  i_data_a_reg[5]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 r  i_data_a_reg[5]/Q
+                         net (fo=6, unplaced)         0.145     0.292    i_data_a_reg_n_1_[5]
+                                                                      r  i_data_a[3]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.101     0.393 r  i_data_a[3]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.393    i_data_a[3]_i_1_n_1
+                         FDPE                                         r  i_data_a_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 i_data_a_reg[5]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            i_data_a_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.393ns  (logic 0.248ns (63.172%)  route 0.145ns (36.828%))
+  Logic Levels:           2  (FDPE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  i_data_a_reg[5]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 r  i_data_a_reg[5]/Q
+                         net (fo=6, unplaced)         0.145     0.292    i_data_a_reg_n_1_[5]
+                                                                      r  i_data_a[5]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.101     0.393 r  i_data_a[5]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.393    i_data_a[5]_i_1_n_1
+                         FDPE                                         r  i_data_a_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ap_ctrl_reg[2]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            fir_tap_ar_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.409ns  (logic 0.245ns (59.845%)  route 0.164ns (40.155%))
+  Logic Levels:           2  (FDPE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  ap_ctrl_reg[2]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 f  ap_ctrl_reg[2]/Q
+                         net (fo=43, unplaced)        0.164     0.311    p_0_in4_in
+                                                                      f  fir_tap_ar[4]_i_1/I3
+                         LUT4 (Prop_lut4_I3_O)        0.098     0.409 r  fir_tap_ar[4]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.409    fir_tap_ar[4]_i_1_n_1
+                         FDCE                                         r  fir_tap_ar_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ap_ctrl_reg[2]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            fir_tap_ar_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.412ns  (logic 0.248ns (60.137%)  route 0.164ns (39.863%))
+  Logic Levels:           2  (FDPE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  ap_ctrl_reg[2]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 f  ap_ctrl_reg[2]/Q
+                         net (fo=43, unplaced)        0.164     0.311    p_0_in4_in
+                                                                      f  fir_tap_ar[3]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.101     0.412 r  fir_tap_ar[3]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.412    fir_tap_ar[3]_i_1_n_1
+                         FDCE                                         r  fir_tap_ar_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ap_ctrl_reg[2]/C
+                            (rising edge-triggered cell FDPE)
+  Destination:            fir_tap_ar_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.412ns  (logic 0.248ns (60.137%)  route 0.164ns (39.863%))
+  Logic Levels:           2  (FDPE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDPE                         0.000     0.000 r  ap_ctrl_reg[2]/C
+                         FDPE (Prop_fdpe_C_Q)         0.147     0.147 f  ap_ctrl_reg[2]/Q
+                         net (fo=43, unplaced)        0.164     0.311    p_0_in4_in
+                                                                      f  fir_tap_ar[5]_i_1/I4
+                         LUT5 (Prop_lut5_I4_O)        0.101     0.412 r  fir_tap_ar[5]_i_1/O
+                         net (fo=1, unplaced)         0.000     0.412    fir_tap_ar[5]_i_1_n_1
+                         FDCE                                         r  fir_tap_ar_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
