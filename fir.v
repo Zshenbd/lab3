@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-
 module fir 
 #(  parameter pADDR_WIDTH = 12,
     parameter pDATA_WIDTH = 32,
@@ -46,84 +45,23 @@ module fir
     input   wire                     axis_clk,
     input   wire                     axis_rst_n
 );
-
-// FSM ap_ctrl----------------------------------------------------------------------------- 
-    reg [2:0]  ap_ctrl; //bit 0: ap_start, bit 1: ap_done, bit 2: ap_idle
-    reg [2:0]  next_ap_ctrl;
-    reg [1:0]  ap_state;
-    reg [1:0]  next_ap_state;
-    `define AP_RUN 2'b00
-    `define AP_IDLE 2'b01
-    `define AP_DONE 2'b10
-    
-    always @* begin
-        case (ap_state)
-            `AP_IDLE:
-            begin
-                if (awaddr == 12'd0 && wdata[0] == 1 && yn_total_count != data_length) begin
-                    next_ap_state <= `AP_RUN;
-                    next_ap_ctrl <= 3'b001;
-                end else begin
-                    next_ap_state <= `AP_IDLE;
-                    next_ap_ctrl <= 3'b100;
-                end  
-            end
-            `AP_RUN:
-            begin
-                if (sm_tvalid && sm_tlast) begin
-                    next_ap_state <= `AP_DONE;
-                    next_ap_ctrl <= 3'b010;
-                end else begin
-                    next_ap_state <= `AP_RUN;
-                    next_ap_ctrl <= 3'b000;
-                end
-            end
-            `AP_DONE:
-            begin
-                if (araddr == 12'd0 && arvalid && rvalid) begin
-                    next_ap_state <= `AP_IDLE;
-                    next_ap_ctrl <= 3'b100;
-                end else begin
-                    next_ap_state <= `AP_DONE;
-                    next_ap_ctrl <= 3'b010;
-                end
-            end
-            default:begin
-                next_ap_state <= `AP_IDLE;
-                next_ap_ctrl <= 3'b100;
-            end
-        endcase
-    end
-    
-    always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n) begin
-            ap_state <= `AP_IDLE;
-            ap_ctrl <= 3'b100;
-        end else begin
-            ap_state <= next_ap_state;
-            ap_ctrl <= next_ap_ctrl;
-        end
-    end
-
-// AXI-Lite----------------------------------------------------------------------------- 
+/********************** configuration register **********************/
+    reg [2:0] ap_state;       //bit 0: ap_start, bit 1: ap_done, bit 2: ap_idle
+    reg [31:0] data_length;
+    reg [31:0] tap_number;
+/********************** AXI-LITE **********************/ 
+    //axi ready and valid signal
     reg fir_awready;
     reg fir_wready;
     reg fir_arready;
     reg fir_rvalid;
-    
-    reg [31:0] data_length;
-    reg [31:0] tap_awdata;
+    reg [31:0] fir_rdata;  
    
     assign awready = fir_awready;
     assign wready = fir_wready;
     assign arready = fir_arready;
     assign rvalid = fir_rvalid;
-    
-    assign tap_EN = (axis_rst_n)? 1 : 0;
-    assign tap_WE = ((wvalid == 1) && (awaddr[7:0] != 0))? 4'b1111 : 4'b0000;
-    assign tap_A  = (awvalid == 1 && (awaddr[5] == 1 || awaddr[6] == 1))? (awaddr[6:0]-6'h20) : tap_ar[5:0];
-    assign tap_Di = (awvalid == 1 && (awaddr[5] == 1 || awaddr[6] == 1))? wdata : 32'h00000000;
-    assign rdata = (araddr[7:0] == 8'd0)? ap_ctrl : tap_Do;
+    assign rdata = fir_rdata; 
         
     always @(posedge axis_clk or negedge axis_rst_n) begin
         if (!axis_rst_n) begin
@@ -132,62 +70,112 @@ module fir
             fir_arready <= 0;
             fir_rvalid <= 0;
         end else begin
-            fir_awready <= (awvalid && wvalid)? 1 : 0;
-            fir_wready <= (awvalid && wvalid)? 1 : 0;
-            fir_arready <= (arvalid && rready)? 1 : 0;
-            fir_rvalid <= (arvalid && rready)? 1 : 0;
+            fir_awready <= (awvalid && wvalid) ? 1 : 0;
+            fir_wready <= (awvalid && wvalid) ? 1 : 0;
+            fir_arready <= (arvalid && rready) ? 1 : 0;
+            fir_rvalid <= (arvalid && rready) ? 1 : 0;
         end
     end
     
-    always @* begin
-        if (fir_awready && fir_wready) begin
-            if (awaddr[7:0] == 8'h10) data_length <= wdata;
-            else data_length <= data_length;
-        end else data_length <= data_length;
+    //tap ram
+    assign tap_EN = (axis_rst_n) ? 1 : 0;
+    assign tap_WE = (wvalid && awaddr[6])? 4'b1111 : 4'b0000; //0x40 for tap ram
+    assign tap_A  = (awvalid && awaddr[6])? awaddr[5:0] : tap_A_read; //tap_A_read is host or fir engine read address
+    assign tap_Di = (wvalid && awaddr[6])? wdata : 32'h00000000;
+    
+    //configuration write 
+    always @(*) begin
+        if(wvalid && !awaddr[6] && !awaddr[4]) ap_state[0] = wdata[0];//0x00 for ap_state (ap_start)
+        else if(wvalid && !awaddr[6] && awaddr[4] && !awaddr[2]) data_length = wdata; //0x10 for data_length
+        else if(wvalid && !awaddr[6] && awaddr[4] && awaddr[2]) tap_number = wdata; //0x14 for tap_number       
     end
     
-// AXI_stream_X[n]-----------------------------------------------------------------------------      
+    //configuration read
+    always @(*) begin
+        if (rready && araddr[6]) fir_rdata = tap_Do;
+        else if (rready && !araddr[6] && !araddr[4]) fir_rdata[2:0] = ap_state[2:0];
+        else if (rready && !araddr[6] && araddr[4] && !araddr[2]) fir_rdata = data_length;
+        else if (rready && !araddr[6] && araddr[4] && araddr[2]) fir_rdata = tap_number;         
+    end
+
+/********************** FSM ap_state **********************/
+    reg next_state;
     
-    assign ss_tready = (ss_tvalid && !ap_ctrl[2] && xn_count[3:0] == 4'd0)? 1 : 0;
-    assign data_EN = (axis_rst_n)? 1 : 0; 
-    assign data_WE = (ss_tready || (ap_ctrl[2] && i_data_a != 6'd44 ))? 4'b1111 : 4'b0000;
-    assign data_A = (ap_ctrl[2])? i_data_a : fir_data_a;
-    assign data_Di = (ap_ctrl[2])? 0 : ss_tdata;
+    //ap_idle state transfer
+    always @(posedge axis_clk or negedge axis_rst_n) begin
+        if (!axis_rst_n) ap_state[2] <= 1'b1;
+        else ap_state[2] <= next_state;
+    end 
     
-     //initialize
+    //combinational logic to generate next state from current state
+    always @(*) begin
+        case (ap_state[2])
+            1'b1://idle
+                if (ap_state[0] && ss_tvalid) next_state = 1'b0; //when ap_start programmed one, engine enters run mode
+                else next_state = 1'b1;  
+            1'b0://run
+                if (sm_tvalid && sm_tlast) next_state = 1'b1; //when last data y is transferred, engine enters idle mode
+                else next_state = 1'b0;
+            default: next_state = 1'b1;
+        endcase
+    end
+    
+    //ap_start and ap_done logic of the engine
+    always @(posedge axis_clk or negedge axis_rst_n) begin
+        if (!axis_rst_n) ap_state[1:0] <= 2'b00;  
+        else begin
+            case (next_state)
+                1'b1://idle
+                    if (!ap_state[1] && sm_tvalid && sm_tlast) ap_state[1] <= 1'b1; //last y is transferred
+                    else if(ap_state[1] && rvalid && arvalid && !araddr[6] && !araddr[4]) ap_state[1] <= 1'b0; //ap_done is read
+                    else ap_state[1] <= ap_state[1];
+                1'b0://run
+                    if (ap_state[0]) ap_state[0] <= 1'b0; //ap_start reset by engine
+                    else ap_state[0] <= ap_state[0];
+                default: ap_state[1:0] = ap_state[1:0];
+            endcase
+        end
+    end
+
+/********************** AXI_stream_X[n] **********************/         
+    assign ss_tready = (ss_tvalid && !ap_state[2] && xn_count[3:0] == 4'd0) ? 1 : 0; //write data every 11 cycle
+    assign data_EN = (axis_rst_n) ? 1 : 0; 
+    assign data_WE = (ss_tready || (ap_state[2] && i_data_a != 6'd44)) ? 4'b1111 : 4'b0000;
+    assign data_A = (ap_state[2]) ? i_data_a : fir_data_a;
+    assign data_Di = (ap_state[2]) ? 0 : ss_tdata; //initialize data ram data to 0
+    
+    //initialize address
     reg  [5:0] i_data_a;
     
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if(!axis_rst_n && !data_EN) i_data_a <= -6'd04;
+        if(!axis_rst_n) i_data_a <= -6'd04;
         else begin
             if (i_data_a == 6'd44) i_data_a <= 6'd44;
             else i_data_a <= i_data_a + 6'd04;
         end
     end
-
-       
-// AXI_stream_Y[n]-----------------------------------------------------------------------------          
+    
+/********************** AXI_stream_Y[n] **********************/        
+    reg sm_state;
+    reg sm_next_state;
     reg [3:0] yn_count;
     reg [31:0] yn_total_count;
     
-    assign sm_tvalid = (yn_count == 4'd1)? 1 : 0;    
-    assign sm_tdata  = (sm_tvalid)? y_reg : 0;                               
+    assign sm_tvalid = (yn_count == 4'd1) ? 1 : 0;    
+    assign sm_tdata  = (sm_tvalid) ? y_reg : 0;             
     assign sm_tlast  = (sm_tvalid && yn_total_count == data_length - 1)? 1 : 0; 
     
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2])
-            yn_count = 4'd0;
+        if (!axis_rst_n || ap_state[2]) yn_count <= 4'd0; 
         else begin
-            if (yn_count == 4'd0) yn_count = Tape_Num + 4'd3;
-            else if (yn_count == 4'd1) yn_count = Tape_Num;
-            else yn_count = yn_count - 1;
+            if (yn_count == 4'd0) yn_count <= tap_number + 4'd2;
+            else if (yn_count == 4'd1) yn_count <= tap_number;
+            else yn_count <= yn_count - 1;
         end
     end
     
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n) begin
-            yn_total_count <= 32'd0;
-        end 
+        if (!axis_rst_n) yn_total_count <= 32'd0;
         else begin
             if (sm_tvalid) begin
                 if (yn_total_count == data_length)
@@ -198,24 +186,22 @@ module fir
             else yn_total_count <= yn_total_count;
         end
     end       
-        
-//tap RAM Address Generator----------------------------------------------------------------------------- 
-    wire [5:0] tap_ar;    
-    reg  [5:0] fir_tap_ar;
+
+/********************** tap RAM Address Generator **********************/
+    wire [5:0] tap_A_read;    
+    reg  [5:0] fir_tap_A;
     
-    assign tap_ar = (ap_ctrl[2])? (araddr[6:0]-6'h20) : fir_tap_ar; 
+    assign tap_A_read = (ap_state[2] && arvalid)? araddr[5:0] : fir_tap_A; 
 
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2])
-            fir_tap_ar = 6'd00;
+        if (!axis_rst_n || ap_state[2]) fir_tap_A <= 6'd00;
         else begin 
-            if (fir_tap_ar == (Tape_Num - 1)*4) fir_tap_ar = 6'd00;
-            else  fir_tap_ar = fir_tap_ar + 3'd4;
+            if (fir_tap_A == (tap_number - 1)*4) fir_tap_A <= 6'd00;
+            else  fir_tap_A <= fir_tap_A + 3'd4;
         end
     end
     
-//data RAM Address Generator-----------------------------------------------------------------------------
-
+/********************** data RAM Address Generator **********************/
     reg [3:0] xn_count;
     reg [5:0] fir_data_aw;
     reg [5:0] fir_data_ar;
@@ -224,40 +210,36 @@ module fir
     assign fir_data_a = (ss_tready) ? fir_data_aw : fir_data_ar;
     
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2])
-            xn_count = 4'd0;
+        if (!axis_rst_n || ap_state[2]) xn_count <= 4'd0;      
         else begin
-            if (xn_count == 4'd0) xn_count = Tape_Num - 1;
-            else xn_count = xn_count - 1;
+            if (xn_count == 4'd0) xn_count <= tap_number - 1;
+            else xn_count <= xn_count - 1;
         end
     end
     
     //address write to data_ram
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2]) 
-            fir_data_aw = 6'd04;
+        if (!axis_rst_n || ap_state[2]) fir_data_aw <= 6'd00;
         else begin
             if (xn_count == 4'd0) begin
-                if (fir_data_aw == (Tape_Num - 1)*4) fir_data_aw = 6'd00;
-                else  fir_data_aw = fir_data_aw + 6'd04;
-            end else fir_data_aw = fir_data_aw;
+                if (fir_data_aw == (tap_number - 1)*4) fir_data_aw <= 6'd00;
+                else  fir_data_aw <= fir_data_aw + 6'd04;
+            end else fir_data_aw <= fir_data_aw;
         end
     end
     
     //address read data_ram
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2]) 
-            fir_data_ar = 6'd04;
+        if (!axis_rst_n || ap_state[2]) fir_data_ar <= (tap_number - 1)*4;
         else begin 
             if (xn_count != 4'd0) begin
-                if (fir_data_ar == 6'd00) fir_data_ar = (Tape_Num - 1)*4;
-                else fir_data_ar = fir_data_ar - 6'd04;
-            end else fir_data_ar = fir_data_ar;
+                if (fir_data_ar == 6'd00) fir_data_ar <= (tap_number - 1)*4;
+                else fir_data_ar <= fir_data_ar - 6'd04;
+            end else fir_data_ar <= fir_data_ar;
         end
     end
-  
-// FIR operation-----------------------------------------------------------------------------
 
+/********************** FIR operation **********************/  
     reg [31:0] b_reg;
     reg [31:0] x_reg;
     reg [31:0] m_reg;
@@ -273,9 +255,9 @@ module fir
     assign m = b_reg * x_reg;           
     assign y = m_reg + y_reg;  
             
-    // Operation
+    //Pipeline Operation
     always @(posedge axis_clk or negedge axis_rst_n) begin
-        if (!axis_rst_n || ap_ctrl[2]) begin
+        if (!axis_rst_n || ap_state[2]) begin
             b_reg <= 32'd0;
             x_reg <= 32'd0;
             m_reg <= 32'd0;
@@ -285,12 +267,10 @@ module fir
             b_reg <= b;
             x_reg <= x;
             m_reg <= m;
-            if (yn_count == Tape_Num)
+            if (yn_count == tap_number)
                 y_reg <= 0;
             else
                 y_reg <= y;
         end
     end
-
 endmodule
-
