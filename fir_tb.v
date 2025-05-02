@@ -209,7 +209,7 @@ module fir_tb
         error_coef = 0;
         $display("----Start the coefficient input(AXI-lite)----");
         config_write(12'h10, data_length);
-        config_write(12'h14, 11);
+        config_write(12'h14, Tape_Num);
         for(k=0; k< Tape_Num; k=k+1) begin
             config_write(12'h40+4*k, coef[k]);
         end
