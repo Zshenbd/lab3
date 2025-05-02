@@ -132,7 +132,7 @@ module fir
                 1'b0://run
                     if (ap_state[0]) ap_state[0] <= 1'b0; //ap_start reset by engine
                     else ap_state[0] <= ap_state[0];
-                default: ap_state[1:0] = ap_state[1:0];
+                default: ap_state[1:0] <= ap_state[1:0];
             endcase
         end
     end
@@ -243,12 +243,12 @@ module fir
     reg [31:0] b_reg;
     reg [31:0] x_reg;
     reg [31:0] m_reg;
-    reg  [31:0] y_reg;
+    reg [31:0] y_reg;
        
-    wire  [31:0] b;
-    wire  [31:0] x;
+    wire [31:0] b;
+    wire [31:0] x;
     wire [31:0] y;
-    wire  [31:0] m;
+    wire [31:0] m;
     
     assign b = (!tap_WE)? tap_Do : 32'd0;          
     assign x = (!data_WE)? data_Do : 32'd0;           
