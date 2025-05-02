@@ -133,8 +133,8 @@ module fir_tb
     integer Din, golden, input_data, golden_data, m;
     initial begin
         data_length = 0;
-        Din = $fopen("E:/ahkust_icde/SOC/FIR/samples_triangular_wave.dat","r");
-        golden = $fopen("E:/ahkust_icde/SOC/FIR/out_gold.dat","r");
+        Din = $fopen("samples_triangular_wave.dat","r");
+        golden = $fopen("out_gold.dat","r");
         for(m=0;m<Data_Num;m=m+1) begin
             input_data = $fscanf(Din,"%d", Din_list[m]);
             golden_data = $fscanf(golden,"%d", golden_list[m]);
