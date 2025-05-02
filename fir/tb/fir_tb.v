@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 08/20/2023 10:38:55 AM
-// Design Name: 
-// Module Name: fir_tb
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module fir_tb
 #(  parameter pADDR_WIDTH = 12,
@@ -152,8 +133,8 @@ module fir_tb
     integer Din, golden, input_data, golden_data, m;
     initial begin
         data_length = 0;
-        Din = $fopen("/home/ubuntu/Desktop/lab3/samples_triangular_wave.dat","r");
-        golden = $fopen("/home/ubuntu/Desktop/lab3/out_gold.dat","r");
+        Din = $fopen("samples_triangular_wave.dat","r");
+        golden = $fopen("out_gold.dat","r");
         for(m=0;m<Data_Num;m=m+1) begin
             input_data = $fscanf(Din,"%d", Din_list[m]);
             golden_data = $fscanf(golden,"%d", golden_list[m]);
@@ -228,14 +209,15 @@ module fir_tb
         error_coef = 0;
         $display("----Start the coefficient input(AXI-lite)----");
         config_write(12'h10, data_length);
+        config_write(12'h14, Tape_Num);
         for(k=0; k< Tape_Num; k=k+1) begin
-            config_write(12'h20+4*k, coef[k]);
+            config_write(12'h40+4*k, coef[k]);
         end
         awvalid <= 0; wvalid <= 0;
         // read-back and check
         $display(" Check Coefficient ...");
         for(k=0; k < Tape_Num; k=k+1) begin
-            config_read_check(12'h20+4*k, coef[k], 32'hffffffff);
+            config_read_check(12'h40+4*k, coef[k], 32'hffffffff);
         end
         arvalid <= 0;
         $display(" Tape programming done ...");
@@ -276,8 +258,6 @@ module fir_tb
             end
         end
     endtask
-
-
 
     task ss;
         input  signed [31:0] in1;
